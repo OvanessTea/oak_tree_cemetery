@@ -1,0 +1,53 @@
+.wrapper {
+    width: 250px;
+    height: 100%;
+    background-color: #ffffff;
+    padding: 20px 20px 24px;
+    box-shadow: 4px 0px 16px 0px #00000014;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0.3px;
+        vertical-align: middle;
+        color: #000000cc;
+    }
+
+    & > p {
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 16px;
+        letter-spacing: 0.24px;
+        vertical-align: middle;
+        color: #000000cc;
+    }
+
+    hr {
+        color: #00000010;
+        margin: 20px 0;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        gap: 12px;
+    }
+
+    .footer {
+        flex: 0 0 auto;
+
+        p {
+            text-align: center;
+            font-weight: 400;
+            font-size: 11px;
+            line-height: 16px;
+            letter-spacing: 0.24px;
+            vertical-align: middle;
+            color: #0000004D;
+        }
+    }
+}

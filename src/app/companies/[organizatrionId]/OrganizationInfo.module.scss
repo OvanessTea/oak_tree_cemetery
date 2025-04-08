@@ -1,0 +1,29 @@
+.container {
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 32px;
+        h1 {
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 40px;
+            letter-spacing: 0.25px;
+            vertical-align: middle;
+            color: rgba(0, 0, 0, 0.8);
+        }
+        .actions {
+            display: flex;
+            gap: 4px;
+            button {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}
