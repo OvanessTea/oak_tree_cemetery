@@ -18,11 +18,11 @@ const OrganizationsPage = observer(() => {
         companyStore.setCompany(organizatrionId as string || '12').then(() => {
             contactStore.setContact(companyStore.company?.contactId || '');
         });
-      }, [organizatrionId]);
+    }, [organizatrionId]);
 
-      if (companyStore.isLoading) return null;
-      if (companyStore.notFound) return <CompanyNotFound />;
-      if (!companyStore.company) return null;
+    if (companyStore.isLoading) return null;
+    if (companyStore.notFound) return <CompanyNotFound />;
+    if (!companyStore.company) return null;
 
     return (
         <div className={styles.wrapper}>
