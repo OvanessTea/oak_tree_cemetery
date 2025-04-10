@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from "framer-motion";
-import { CompanyType, UpdateContactType } from '@/types/company.type';
+import { CompanyType, UpdateCompanyType } from '@/types/company.type';
 import styles from './CompanyDetails.module.scss';
 import edit from '@/assets/edit.svg';
 import check from '@/assets/check.svg';
@@ -8,7 +8,6 @@ import x from '@/assets/x.svg';
 import Image from 'next/image';
 import classNames from 'classnames';
 import Select from '@/components/select/Select';
-import { updateCompany } from '@/lib/company.api';
 import companyStore from '@/stores/companyStore';
 
 interface CompanyDetailsProps {
@@ -77,7 +76,7 @@ const CompanyDetails = ({ company }: CompanyDetailsProps) => {
 
     const submitChanges = async () => {
         const [month, day, year] = agreementDate.split('.');
-        const data: UpdateContactType = {
+        const data: UpdateCompanyType = {
             businessEntity: businessEntities.find(entity => entity.label === businessEntity)?.value || '',
             contract: {
                 no: agreementNumber,

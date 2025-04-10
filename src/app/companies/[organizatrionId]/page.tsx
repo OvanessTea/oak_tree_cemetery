@@ -9,12 +9,15 @@ import companyStore from "@/stores/companyStore";
 import { observer } from "mobx-react-lite";
 import { useParams } from "next/navigation";
 import CompanyNotFound from "./CompanyNotFound";
+import contactStore from "@/stores/contactStore";
 
 const OrganizationsPage = observer(() => {
     const { organizatrionId } = useParams();
 
     useEffect(() => {
-        companyStore.setCompany(organizatrionId as string || '12');
+        companyStore.setCompany(organizatrionId as string || '12').then(() => {
+            contactStore.setContact(companyStore.company?.contactId || '');
+        });
       }, [organizatrionId]);
 
       if (companyStore.isLoading) return null;

@@ -47,7 +47,7 @@ const OrganizationInfo = ({ company }: OrganizationInfoProps) => {
                     <CompanyDetails company={company} />
                 </Section>
                 <Section>
-                    <Contacts company={company} />
+                    <Contacts />
                 </Section>
                 <Section>
                     <Photos company={company} />

@@ -16,9 +16,8 @@
         }
 
         .actions {
-            .edit_btn {
+            button {
                 height: 28px;
-                width: 71px;
                 border-radius: 8px;
                 border: 1px solid rgba(0, 0, 0, 0.2);
                 padding: 4px 12px 4px 8px;
@@ -29,13 +28,26 @@
                 font-weight: 600;
                 line-height: 20px;
                 letter-spacing: 0.48px;
-                color: #3b3b3b;
                 cursor: pointer;
+                transition: all 0.3s;
                 img {
                     position: initial;
+                }
+            }
+            .edit_btn {
+                width: 71px;
+                color: #3b3b3b;
+                img {
                     filter: none;
                 }
 
+            }
+            .edit_actions {
+                display: flex;
+                gap: 12px;
+                button {
+                    width: fit-content;
+                }
             }
         }
     }
@@ -58,6 +70,7 @@
                 letter-spacing: 0.25px;
                 vertical-align: middle;
                 color: rgba(0, 0, 0, 0.5);
+                white-space: nowrap;
             }
             
             .value {
@@ -73,6 +86,16 @@
                 display: flex;
                 gap: 12px;
                 align-items: center;
+            }
+        }
+        &.editable {
+            gap: 12px;
+            .row {
+                height: 40px;
+                gap: 12px;
+                .value {
+                    flex: 1;
+                }
             }
         }
     }
