@@ -29,6 +29,7 @@
                 line-height: 20px;
                 letter-spacing: 0.48px;
                 cursor: pointer;
+                transition: all 0.3s;
                 img {
                     position: initial;
                 }
@@ -69,6 +70,7 @@
                 letter-spacing: 0.25px;
                 vertical-align: middle;
                 color: rgba(0, 0, 0, 0.5);
+                white-space: nowrap;
             }
             
             .value {
@@ -86,6 +88,20 @@
                 align-items: center;
             }
         }
+        &.editable {
+            gap: 12px;
+            .row {
+                height: 40px;
+                gap: 12px;
+                .label {
+                    &.date {
+                        width: fit-content;
+                    }
+                }
+                .value {
+                    width: 180.5px;
+                }
+            }
+        }
     }
-
 }
