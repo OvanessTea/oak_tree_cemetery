@@ -25,7 +25,7 @@ export default function CompaniesLayout({children}: {children: ReactNode}) {
     }
     return (
         <PrivateLayout>
-            <div className="flex h-full w-full">
+            <div className="flex h-full w-full overflow-hidden max-h-[100%]">
                 <CompaniesNavbar currentTab={currentTab} setCurrentTab={setCurrentTab} />
                 {getContent()}
             </div>

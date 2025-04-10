@@ -4,4 +4,7 @@
     padding: 24px;
     background-color: #FFFFFF;
     width: 100%;
+    &:last-child {
+        margin-bottom: 20px;
+    }
 }
