@@ -1,5 +1,5 @@
 import { makeAutoObservable, runInAction } from "mobx";
-import { CompanyType, UpdateContactType } from "@/types/company.type";
+import { CompanyType, UpdateCompanyType } from "@/types/company.type";
 import {
   getCompany,
   updateCompany,
@@ -40,9 +40,10 @@ export class CompanyStore {
         this.isLoading = false;
       });
     }
+    return this.company;
   }
 
-  async updateCompany(id: string, data: Partial<UpdateContactType>) {
+  async updateCompany(id: string, data: Partial<UpdateCompanyType>) {
     this.isLoading = true;
     this.error = null;
     let status: number = 0;
