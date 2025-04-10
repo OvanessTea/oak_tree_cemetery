@@ -12,9 +12,16 @@ import Photos from './photos/Photos';
 import { Modal } from '@/components/modal/Modal';
 import DeleteModal from './delete_modal/DeleteModal';
 import EditModal from './edit_modal/EditModal';
+import { AnimatePresence, motion } from 'framer-motion';
 
 interface OrganizationInfoProps {
     company: CompanyType;
+}
+const animationProps = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+    transition: { duration: 0.15 }
 }
 
 const OrganizationInfo = ({ company }: OrganizationInfoProps) => {
@@ -47,12 +54,32 @@ const OrganizationInfo = ({ company }: OrganizationInfoProps) => {
                 </Section>
             </div>
             <div className={styles.modals}>
-                <Modal isOpen={isEdit} onClose={() => setIsEdit(false)}>
-                    <EditModal setIsEdit={setIsEdit} />
-                </Modal>
-                <Modal isOpen={isDelete} onClose={() => setIsDelete(false)}>
-                    <DeleteModal setIsDelete={setIsDelete} />
-                </Modal>
+                <AnimatePresence mode="wait">
+                    {isEdit && (
+                        <motion.div
+                            className={styles.modal}
+                            key="edit"
+                            {...animationProps}
+                        >
+                            <Modal isOpen={isEdit} onClose={() => setIsEdit(false)}>
+                                <EditModal setIsEdit={setIsEdit} />
+                            </Modal>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+                <AnimatePresence mode="wait">
+                    {isDelete && (
+                        <motion.div
+                            className={styles.modal}
+                            key="delete"
+                            {...animationProps}
+                        >
+                            <Modal isOpen={isDelete} onClose={() => setIsDelete(false)}>
+                                <DeleteModal setIsDelete={setIsDelete} />
+                            </Modal>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
         </div>
     )
