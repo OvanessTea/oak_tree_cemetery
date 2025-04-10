@@ -19,10 +19,10 @@ const LoginPage = observer(() => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
             <form onSubmit={handleSubmit} className="bg-white p-8 rounded-xl shadow-md w-full max-w-sm space-y-4">
-                <h1 className="text-2xl font-bold text-center">Вход</h1>
+                <h1 className="text-2xl font-bold text-center">Login</h1>
                 <input
                     type="text"
-                    placeholder="Имя пользователя"
+                    placeholder="Username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     className="w-full p-2 border rounded"
@@ -33,7 +33,7 @@ const LoginPage = observer(() => {
                     type="submit"
                     className="w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition"
                 >
-                    Войти
+                    Login
                 </button>
             </form>
         </div>

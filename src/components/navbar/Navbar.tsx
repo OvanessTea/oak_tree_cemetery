@@ -9,9 +9,9 @@ import styles from "./Navbar.module.scss";
 import authStore from "@/stores/authStore";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
-
+import { useEffect, useState } from "react";
 export const Navbar = () => {
-
+    const [isAuth, setIsAuth] = useState(false);
     const router = useRouter();
     const pathname = usePathname();
 
@@ -20,6 +20,14 @@ export const Navbar = () => {
         router.push("/login");
     }
 
+    useEffect(() => {
+        setIsAuth(authStore.isAuthenticated);
+    }, [authStore.isAuthenticated]);
+
+    if (!isAuth) {
+        return null;
+    }
+    
     return (
         <div className={styles.actions}>
             <div className={styles.top}>
