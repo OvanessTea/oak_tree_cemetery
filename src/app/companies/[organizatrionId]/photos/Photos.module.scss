@@ -31,6 +31,7 @@
                 letter-spacing: 0.48px;
                 color: #3b3b3b;
                 cursor: pointer;
+
                 img {
                     position: initial;
                 }
@@ -43,14 +44,17 @@
         display: flex;
         gap: 12px;
         flex-wrap: wrap;
+
         .photo_container {
             position: relative;
+
             .photo {
                 object-fit: cover;
                 border-radius: 10px;
                 width: 144px;
                 height: 108px;
             }
+
             .delete_btn {
                 position: absolute;
                 top: 8px;
@@ -61,10 +65,21 @@
                 background-color: #3B3B3B;
                 border: none;
                 cursor: pointer;
+
                 img {
                     filter: brightness(0) invert(1);
                 }
             }
+
+        }
+
+        .no_photos {
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 20px;
+            letter-spacing: 0.25px;
+            vertical-align: middle;
+            color: rgba(0, 0, 0, 0.5);
         }
     }
 
