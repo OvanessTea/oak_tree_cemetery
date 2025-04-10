@@ -29,6 +29,9 @@ export const authorizedFetch = async (url: string, options: RequestInit = {}) =>
     if (!res.ok) {
         throw new Error('Failed to fetch data');
     }
+    if (options.method === 'DELETE') {
+        return res;
+    }
     return res.json();
 };
 
