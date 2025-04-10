@@ -22,8 +22,8 @@ const DeleteModal = ({ setIsDelete }: DeleteModalProps) => {
         handleDelete();
       }
     }}>
-      <h1>Specify the Organization's name</h1>
-      <p>Are you sure you want to remove this Organozation?</p>
+      <h1>Remove the Organization?</h1>
+      <p>Are you sure you want to remove this Organization?</p>
       <div className={styles.actions}>
         <button onClick={() => setIsDelete(false)} className="action_btn">Cancel</button>
         <button onClick={handleDelete} className={classNames("action_btn", "active")}>Delete</button>
