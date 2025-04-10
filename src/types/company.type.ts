@@ -21,11 +21,11 @@ export type CompanyType =
         updatedAt: string;
     }
 
-    export type UpdateContactType = {
-        "name"?: string,
-        "shortName"?: string,
-        "businessEntity"?: string,
-        "contract"?: {
+    export type UpdateCompanyType = {
+        name?: string,
+        shortName?: string,
+        businessEntity?: string,
+        contract?: {
             no?: string,
             issue_date?: Date,
         },
