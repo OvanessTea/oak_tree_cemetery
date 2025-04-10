@@ -1,5 +1,5 @@
 import { makeAutoObservable, runInAction } from "mobx";
-import { CompanyType } from "@/types/company.type";
+import { CompanyType, UpdateContactType } from "@/types/company.type";
 import {
   getCompany,
   updateCompany,
@@ -42,15 +42,18 @@ export class CompanyStore {
     }
   }
 
-  async updateCompany(id: string, data: Partial<CompanyType>) {
+  async updateCompany(id: string, data: Partial<UpdateContactType>) {
     this.isLoading = true;
     this.error = null;
+    let status: number = 0;
     try {
       const company = await updateCompany(id, data);
+      status = 200;
       runInAction(() => {
         this.company = company;
       });
     } catch (e: any) {
+      status = e.response?.status;
       runInAction(() => {
         this.error = e.message || "Ошибка при обновлении компании";
       });
@@ -59,6 +62,7 @@ export class CompanyStore {
         this.isLoading = false;
       });
     }
+    return status;
   }
 
   async deleteCompany(id: string) {
