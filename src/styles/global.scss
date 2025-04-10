@@ -138,6 +138,23 @@ main {
             background-color: #3b3b3bb3;
         }
     }
+    &.disabled {
+        cursor: not-allowed !important;
+        opacity: 0.5 !important;
+        &:hover,
+        &:active,
+        &.active {
+            background-color: initial;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            box-shadow: none;
+            
+            &,
+            img,
+            p {
+                color: rgba(0, 0, 0, 0.8);
+            }
+        }
+    }
 }
 
 input {
@@ -146,7 +163,10 @@ input {
     border-radius: 8px;
     border-width: 1px;
     border: 1px solid rgba(0, 0, 0, 0.2);
-
+    &.empty {
+        border-color: #FF4D4D;
+        border-width: 2px;
+    }
 }
 input:hover {
     border-color: rgba(0, 0, 0, 0.5);
