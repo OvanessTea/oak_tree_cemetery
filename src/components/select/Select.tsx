@@ -56,14 +56,12 @@ export default function Select({
             const hiddenLabels: string[] = [];
 
             for (const opt of selectedOptions) {
-                console.log("START", totalLength, opt.label.length)
                 if (totalLength + opt.label.length <= MAX_LABEL_LENGTH) {
                     visibleLabels.push(opt.label);
                     totalLength += opt.label.length;
                 } else {
                     hiddenLabels.push(opt.label);
                 }
-                console.log("END", totalLength, opt.label.length)
             }
 
             return (
