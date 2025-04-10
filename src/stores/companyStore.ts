@@ -1,4 +1,4 @@
-import { makeAutoObservable, runInAction } from "mobx";
+import { makeAutoObservable, observable, runInAction } from "mobx";
 import { CompanyType, UpdateCompanyType } from "@/types/company.type";
 import {
   getCompany,
@@ -9,7 +9,7 @@ import {
 } from "@/lib/company.api";
 
 export class CompanyStore {
-  company: CompanyType | null = null;
+  @observable company: CompanyType | null = null;
   isLoading = false;
   error: string | null = null;
   notFound: boolean = false;
@@ -89,9 +89,12 @@ export class CompanyStore {
     this.isLoading = true;
     this.error = null;
     try {
-      const updatedCompany = await uploadCompanyImage(id, image);
+      const uploadedImage = await uploadCompanyImage(id, image);
       runInAction(() => {
-        this.company = updatedCompany;
+        this.company = {
+          ...this.company!,
+          photos: [...this.company!.photos, uploadedImage],
+        };
       });
     } catch (e: any) {
       runInAction(() => {
@@ -108,9 +111,12 @@ export class CompanyStore {
     this.isLoading = true;
     this.error = null;
     try {
-      const updatedCompany = await deleteCompanyImage(id, imageId);
+      deleteCompanyImage(id, imageId);
       runInAction(() => {
-        this.company = updatedCompany;
+        this.company = {
+          ...this.company!,
+          photos: this.company!.photos.filter((photo) => photo.name !== imageId),
+        };
       });
     } catch (e: any) {
       runInAction(() => {
