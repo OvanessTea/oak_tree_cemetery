@@ -1,7 +1,7 @@
 let token: string | null = null;
 
 export const setToken = async (username: string) => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/auth?user=${username}`);
+    const res = await fetch(`https://test-task-api.allfuneral.com/auth?user=${username}`);
     if (!res.ok) {
         throw new Error('Authentication failed');
     }
@@ -23,7 +23,7 @@ export const authorizedFetch = async (url: string, options: RequestInit = {}) =>
         ...options.headers,
         Authorization: `Bearer ${token}`,
     };
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${url}`, { ...options, headers });
+    const res = await fetch(`https://test-task-api.allfuneral.com`, { ...options, headers });
     if (!res.ok) {
         throw new Error('Failed to fetch data');
     }
