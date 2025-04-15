@@ -2,9 +2,9 @@
 import styles from "./CompaniesNavbar.module.scss";
 import { Dispatch, SetStateAction } from "react";
 import Image from "next/image";
-import company from "@/assets/company.svg";
-import contractor from "@/assets/contractor.svg";
-import account from "@/assets/account.svg";
+import company from "../../../public/company.svg";
+import contractor from "../../../public/contractor.svg";
+import account from "../../../public/account.svg";
 import classNames from "classnames";
 
 

@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from "framer-motion";
 import { CompanyType, UpdateCompanyType } from '@/types/company.type';
 import styles from './CompanyDetails.module.scss';
-import edit from '@/assets/edit.svg';
-import check from '@/assets/check.svg';
-import x from '@/assets/x.svg';
+import edit from '../../../../../public/edit.svg';
+import check from '../../../../../public/check.svg';
+import x from '../../../../../public/x.svg';
 import Image from 'next/image';
 import classNames from 'classnames';
 import Select from '@/components/select/Select';

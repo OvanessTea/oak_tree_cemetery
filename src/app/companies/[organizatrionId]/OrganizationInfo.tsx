@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { CompanyType } from '@/types/company.type';
 import styles from './OrganizationInfo.module.scss';
 import Image from 'next/image';
-import edit from '@/assets/edit.svg';
-import trash from '@/assets/trash.svg';
+import edit from '../../../../public/edit.svg';
+import trash from '../../../../public/trash.svg';
 import classNames from 'classnames';
 import Section from '@/components/section/Section';
 import CompanyDetails from './company_details/CompanyDetails';

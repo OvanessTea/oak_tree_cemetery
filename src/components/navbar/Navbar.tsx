@@ -1,9 +1,9 @@
 'use client';
-import signOut from "@/assets/sign_out.svg";
-import settings from "@/assets/settings.svg";
-import logo from "@/assets/logo.svg";
-import company from "@/assets/company.svg";
-import search from "@/assets/search.svg";
+import signOut from "../../../public/sign_out.svg";
+import settings from "../../../public/settings.svg";
+import logo from "../../../public/logo.svg";
+import company from "../../../public/company.svg";
+import search from "../../../public/search.svg";
 import Image from "next/image";
 import styles from "./Navbar.module.scss";
 import authStore from "@/stores/authStore";

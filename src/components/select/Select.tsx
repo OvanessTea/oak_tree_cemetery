@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import styles from "./Select.module.scss";
 import Image from "next/image";
-import input from "@/assets/input.svg";
+import input from "../../../public/input.svg";
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 type Option = {

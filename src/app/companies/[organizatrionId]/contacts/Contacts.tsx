@@ -2,14 +2,14 @@
 import React, { useEffect, useState } from 'react'
 import { UpdateContactType } from '@/types/contact.type';
 import styles from './Contacts.module.scss';
-import edit from '@/assets/edit.svg';
+import edit from '../../../../../public/edit.svg';
 import Image from 'next/image';
 import classNames from 'classnames';
 import contactStore from '@/stores/contactStore';
 import { observer } from 'mobx-react-lite';
 import { AnimatePresence, motion } from 'framer-motion';
-import check from '@/assets/check.svg';
-import x from '@/assets/x.svg';
+import check from '../../../../../public/check.svg';
+import x from '../../../../../public/x.svg';
 import { isValidPhoneNumber, parsePhoneNumber, isValidNumber } from 'libphonenumber-js';
 import { countryCodes } from '@/types/country.codes';
 

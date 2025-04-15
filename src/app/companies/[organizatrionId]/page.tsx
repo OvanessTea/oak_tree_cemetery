@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import styles from "./OrganizationsPage.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import chevron from "@/assets/chevron.svg";
+import chevron from "../../../../public/chevron.svg";
 import OrganizationInfo from "./OrganizationInfo";
 import companyStore from "@/stores/companyStore";
 import { observer } from "mobx-react-lite";

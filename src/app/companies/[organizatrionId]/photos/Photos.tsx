@@ -1,10 +1,10 @@
 "use client"
 import React, { useState } from 'react'
 import { CompanyType } from '@/types/company.type';
-import add_photo from '@/assets/add_photo.svg';
+import add_photo from '../../../../../public/add_photo.svg';
 import Image from 'next/image';
 import classNames from 'classnames';
-import trash from '@/assets/trash.svg';
+import trash from '../../../../../public/trash.svg';
 import styles from './Photos.module.scss';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Modal } from '@/components/modal/Modal';
