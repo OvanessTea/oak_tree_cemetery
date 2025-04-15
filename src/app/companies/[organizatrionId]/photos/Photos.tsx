@@ -1,10 +1,8 @@
 "use client"
 import React, { useState } from 'react'
 import { CompanyType } from '@/types/company.type';
-import add_photo from '../../../../../public/add_photo.svg';
 import Image from 'next/image';
 import classNames from 'classnames';
-import trash from '../../../../../public/trash.svg';
 import styles from './Photos.module.scss';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Modal } from '@/components/modal/Modal';
@@ -26,7 +24,7 @@ const Photos = observer(({ company }: PhotosProps) => {
                 <h1>Photos</h1>
                 <div className={styles.actions}>
                     <button className={classNames("action_btn", styles.add_btn)} onClick={() => setIsAddPhotoModalOpen(true)}>
-                        <Image src={add_photo} alt="Add photo" height={16} width={16} />
+                        <Image src={"/add_photo.svg"} alt="Add photo" height={16} width={16} />
                         <p>Add</p>
                     </button>
                 </div>
@@ -40,7 +38,7 @@ const Photos = observer(({ company }: PhotosProps) => {
                             setSelectedPhoto(photo.name);
                             setIsDeletePhotoModalOpen(true);
                         }}>
-                            <Image src={trash} alt="Delete" height={16} width={16} />
+                            <Image src={"/trash.svg"} alt="Delete" height={16} width={16} />
                         </button>
                     </div>
                 ))}

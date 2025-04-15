@@ -2,9 +2,6 @@
 import styles from "./CompaniesNavbar.module.scss";
 import { Dispatch, SetStateAction } from "react";
 import Image from "next/image";
-import company from "../../../public/company.svg";
-import contractor from "../../../public/contractor.svg";
-import account from "../../../public/account.svg";
 import classNames from "classnames";
 
 
@@ -24,15 +21,15 @@ export const CompaniesNavbar = (props: CompaniesNavbarProps) => {
             <hr />
             <div className={styles.nav}>
                 <button className={classNames("action_btn", currentTab === "organizations" ? "active" : "")} onClick={() => setCurrentTab("organizations")}>
-                    <Image src={company} alt="Organizations" height={16} width={16}/>
+                    <Image src={"/company.svg"} alt="Organizations" height={16} width={16}/>
                     <p>Organizations</p>
                 </button>
                 <button className={classNames("action_btn", currentTab === "contractors" ? "active" : "")} onClick={() => setCurrentTab("contractors")}>
-                    <Image src={contractor} alt="Contractors" height={16} width={16}/>
+                    <Image src={"/contractor.svg"} alt="Contractors" height={16} width={16}/>
                     <p>Contractors</p>
                 </button>
                 <button className={classNames("action_btn", currentTab === "clients" ? "active" : "")} onClick={() => setCurrentTab("clients")}>
-                    <Image src={account} alt="Clients" height={16} width={16}/>
+                    <Image src={"/account.svg"} alt="Clients" height={16} width={16}/>
                     <p>Clients</p>
                 </button>
             </div>

@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import styles from "./Select.module.scss";
 import Image from "next/image";
-import input from "../../../public/input.svg";
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 type Option = {
@@ -105,7 +104,7 @@ export default function Select({
                 className={classNames(styles.fake_input, isOpen && styles.open, value.length > 0 && styles.filled)}
             >
                 {value.length > 0 ? getDisplayLabel() : placeholder}
-                <Image className={isOpen ? styles.open : ''} src={input} alt="input" width={20} height={20} />
+                <Image className={isOpen ? styles.open : ''} src={"/input.svg"} alt="input" width={20} height={20} />
             </button>
             <AnimatePresence>
                 {isOpen && (

@@ -2,9 +2,6 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from "framer-motion";
 import { CompanyType, UpdateCompanyType } from '@/types/company.type';
 import styles from './CompanyDetails.module.scss';
-import edit from '../../../../../public/edit.svg';
-import check from '../../../../../public/check.svg';
-import x from '../../../../../public/x.svg';
 import Image from 'next/image';
 import classNames from 'classnames';
 import Select from '@/components/select/Select';
@@ -111,11 +108,11 @@ const CompanyDetails = ({ company }: CompanyDetailsProps) => {
                                     className={classNames("action_btn", disableRules && "disabled")}
                                     onClick={() => submitChanges()}
                                 >
-                                    <Image src={check} alt="Save changes" height={16} width={16} />
+                                    <Image src={"/check.svg"} alt="Save changes" height={16} width={16} />
                                     <p>Save changes</p>
                                 </button>
                                 <button className={classNames("action_btn")} onClick={() => setIsEdit(false)}>
-                                    <Image src={x} alt="Cancel" height={16} width={16} />
+                                    <Image src={"/x.svg"} alt="Cancel" height={16} width={16} />
                                     <p>Cancel</p>
                                 </button>
                             </motion.div>
@@ -126,7 +123,7 @@ const CompanyDetails = ({ company }: CompanyDetailsProps) => {
                                 {...animationProps}
                             >
                                 <button className={classNames("action_btn", styles.edit_btn)} onClick={() => setIsEdit(true)}>
-                                    <Image src={edit} alt="Edit" height={16} width={16} />
+                                    <Image src={"/edit.svg"} alt="Edit" height={16} width={16} />
                                     <p>Edit</p>
                                 </button>
                             </motion.div>

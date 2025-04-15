@@ -2,14 +2,11 @@
 import React, { useEffect, useState } from 'react'
 import { UpdateContactType } from '@/types/contact.type';
 import styles from './Contacts.module.scss';
-import edit from '../../../../../public/edit.svg';
 import Image from 'next/image';
 import classNames from 'classnames';
 import contactStore from '@/stores/contactStore';
 import { observer } from 'mobx-react-lite';
 import { AnimatePresence, motion } from 'framer-motion';
-import check from '../../../../../public/check.svg';
-import x from '../../../../../public/x.svg';
 import { isValidPhoneNumber, parsePhoneNumber, isValidNumber } from 'libphonenumber-js';
 import { countryCodes } from '@/types/country.codes';
 
@@ -106,11 +103,11 @@ const Contacts = observer(() => {
                                     className={classNames("action_btn", disableRules && "disabled")}
                                     onClick={() => submitChanges()}
                                 >
-                                    <Image src={check} alt="Save changes" height={16} width={16} />
+                                    <Image src={"/check.svg"} alt="Save changes" height={16} width={16} />
                                     <p>Save changes</p>
                                 </button>
                                 <button className={classNames("action_btn")} onClick={() => setIsEdit(false)}>
-                                    <Image src={x} alt="Cancel" height={16} width={16} />
+                                    <Image src={"/x.svg"} alt="Cancel" height={16} width={16} />
                                     <p>Cancel</p>
                                 </button>
                             </motion.div>
@@ -121,7 +118,7 @@ const Contacts = observer(() => {
                                 {...animationProps}
                             >
                                 <button className={classNames("action_btn", styles.edit_btn)} onClick={() => setIsEdit(true)}>
-                                    <Image src={edit} alt="Edit" height={16} width={16} />
+                                    <Image src={"/edit.svg"} alt="Edit" height={16} width={16} />
                                     <p>Edit</p>
                                 </button>
                             </motion.div>

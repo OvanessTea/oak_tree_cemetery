@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import styles from "./OrganizationsPage.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import chevron from "../../../../public/chevron.svg";
 import OrganizationInfo from "./OrganizationInfo";
 import companyStore from "@/stores/companyStore";
 import { observer } from "mobx-react-lite";
@@ -30,7 +29,7 @@ const OrganizationsPage = observer(() => {
                 <div className={styles.go_back_btn_container}>
                     <div className="icon_btn">
                         <Link href="/companies">
-                            <Image src={chevron} alt="Back" height={20} width={20} />
+                            <Image src={"/chevron.svg"} alt="Back" height={20} width={20} />
                         </Link>
                     </div>
                 </div>
