@@ -23,7 +23,7 @@ export const authorizedFetch = async (url: string, options: RequestInit = {}) =>
         ...options.headers,
         Authorization: `Bearer ${token}`,
     };
-    const res = await fetch(`https://test-task-api.allfuneral.com`, { ...options, headers });
+    const res = await fetch(`https://test-task-api.allfuneral.com${url}`, { ...options, headers });
     if (!res.ok) {
         throw new Error('Failed to fetch data');
     }
