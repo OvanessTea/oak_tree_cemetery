@@ -22,7 +22,7 @@ const EditModal = ({ setIsEdit }: EditModalProps) => {
         handleSave();
       }
     }}>
-      <h1>Specify the Organization's name</h1>
+      <h1>Specify the Organization&apos;s name</h1>
       <input type="text" value={name} onChange={(e) => setName(e.target.value)} className={styles.input} />
       <div className={styles.actions}>
         <button onClick={() => setIsEdit(false)} className="action_btn">Cancel</button>

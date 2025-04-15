@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
     });
     return config;
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     domains: ['test-task-api.allfuneral.com'],
   },

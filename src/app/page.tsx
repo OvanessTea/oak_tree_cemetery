@@ -1,10 +1,9 @@
 "use client"
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { setToken } from "@/lib/api";
-import { AppProps } from "next/app";
+import { useRouter } from "next/navigation";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App() {
     const router = useRouter();
 
     useEffect(() => {
@@ -15,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
         } else {
             router.push('/login');
         }
-    }, []);
+    }, [router]);
     
     return (
         <></>

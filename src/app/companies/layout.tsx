@@ -1,12 +1,12 @@
 "use client"
 import PrivateLayout from "../private/layout";
-import { ReactNode, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { CompaniesNavbar } from "./CompaniesNavbar";
 import OrganizationsPage from "./[organizatrionId]/page";
 import authStore from "@/stores/authStore";
 import { useRouter } from "next/navigation";
 
-export default function CompaniesLayout({children}: {children: ReactNode}) {
+export default function CompaniesLayout() {
     const [currentTab, setCurrentTab] = useState("organizations");
     const router = useRouter();
     const getContent = () => {

@@ -12,7 +12,7 @@ const PrivateLayout = observer(({children}: {children: ReactNode}) => {
         if (!authStore.isAuthenticated) {   
             router.push('/login');
         }
-    }, [authStore.isAuthenticated, router]);
+    }, [router]);
 
     return (
         <>

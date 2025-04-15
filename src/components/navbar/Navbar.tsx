@@ -22,7 +22,7 @@ export const Navbar = () => {
 
     useEffect(() => {
         setIsAuth(authStore.isAuthenticated);
-    }, [authStore.isAuthenticated]);
+    }, []);
 
     if (!isAuth) {
         return null;
