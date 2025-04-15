@@ -9,13 +9,18 @@ import {
 } from "@/lib/company.api";
 
 export class CompanyStore {
-  @observable company: CompanyType | null = null;
+  company: CompanyType | null = null;
   isLoading = false;
   error: string | null = null;
   notFound: boolean = false;
 
   constructor() {
-    makeAutoObservable(this);
+    makeAutoObservable(this, {
+      company: observable,
+      isLoading: observable,
+      error: observable,
+      notFound: observable,
+    });
   }
 
   async setCompany(id: string) {
